@@ -38,7 +38,7 @@ class user extends Database{
 
     //function to get rows 
     public function getRows($start=0,$limit=4){
-        $sql = "SELECT * FROM  {$this->tableName} ORDER BY DESC LIMIT {$start},{$limit}";
+        $sql = "SELECT * FROM  {$this->tableName} ORDER BY id DESC LIMIT {$start},{$limit}";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             if($stmt->rowCount()>0){
@@ -50,17 +50,17 @@ class user extends Database{
     }
 
     //function to get single row
-    public function getRow($field,$value){
-        $sql = "SELECT * FROM  {$this->tableName} WHERE {$field}=:{$field}";
+    public function getRow($field, $value) {
+        $sql = "SELECT * FROM {$this->tableName} WHERE {$field} = :{$field}";
         $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(":{$field}", $value); // Bind the value to the placeholder
         $stmt->execute();
-        if($stmt->rowCount()>0){
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    }else{
-        $result =[];
-    }
-    return $result;
-
+        if ($stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            $result = [];
+        }
+        return $result;
     }
     //function to count no of rows
     public function getCount(){

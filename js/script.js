@@ -14,12 +14,19 @@ $(document).on("submit","#addform",function(e){
         beforeSend:function(){
             console.log("Wait... Data is Loading")
         },
-        success:function(response){
-            console.log(response)
+        success: function(response) {
+            console.log(response);
+            if (response.status === 'success') {
+                $("#usermodal").modal("hide");
+                $("#addform")[0].reset();
+                alert("User added successfully!"); // Optional: Notify the user
+            } else {
+                alert("Error: " + response.message); // Show error message if any
+            }
         },
-        error:function(request,error){
-                console.log(arguments);
-                console.log("Error"+error);
+        error: function(request, error) {
+            console.log(arguments);
+            alert("An error occurred: " + request.responseText); // Show the error message
         }
     });
 });

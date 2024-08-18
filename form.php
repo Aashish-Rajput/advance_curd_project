@@ -48,7 +48,7 @@
                                 <div class="input-group">
                                     <label class="custom-file-label me-2" for="userimage">Choose File :</label>
                                      
-                                    <input type="file" class="custom-file-input" name="image"
+                                    <input type="file" class="custom-file-input" name="image" accept="image/*"
                                         id="userimage">
                                 </div>
                             </div>
