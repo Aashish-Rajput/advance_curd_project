@@ -7,8 +7,7 @@
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Adding Or Updating Users</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-
-                    <form action="addform" method="post" enctype="multipart/form-data">
+                    <form id="addform" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="form-group">
                                 <!-- INPUT NAME -->
@@ -19,7 +18,7 @@
                                             <i class="fas fa-user-alt text-light py-2"></i>
                                         </span>
                                     </div>
-                                    <input type="text" name="" id="" class="form-control" placeholder="Enter Your User Name"
+                                    <input type="text"  class="form-control" placeholder="Enter Your User Name"
                                         autocomplete="off" required="required" id="username" name="username">
                                 </div>
                                 <!-- INPUT EMAIL -->
@@ -30,7 +29,7 @@
                                             <i class="fas fa-envelope-open text-light py-2"></i>
                                         </span>
                                     </div>
-                                    <input type="email" name="" id="" class="form-control" placeholder="Enter your Email"
+                                    <input type="email"  class="form-control" placeholder="Enter your Email"
                                         autocomplete="off" required="required" id="email" name="email">
                                 </div>
                                 <!-- USER MOBILE -->
@@ -41,7 +40,7 @@
                                             <i class="fas fa-phone text-light py-2"></i>
                                         </span>
                                     </div>
-                                    <input type="email" name="" id="" class="form-control" placeholder="Enter your Mobile Number"
+                                    <input type="phone" class="form-control" placeholder="Enter your Mobile Number"
                                         autocomplete="off" required="required" id="mobile" name="mobile" maxlength="10" minlength="10">
                                 </div>
                                 <!-- PRFILE IMAGE -->
@@ -55,8 +54,12 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-dark ">Submit</button>
+                            <button type="submit" class="btn btn-dark ">Submit</button>
                             <button type="button" class="btn btn-danger"  data-bs-dismiss="modal">Close</button>
+                            <!-- 2 input fileds first or add and -->
+                            <input type="hidden" name="action" value="adduser">
+                             <!-- other for updating or deleting profile; --> 
+                            <input type="hidden" name="userId" id="userId">
                         </div>
                     </form>
                 </div>
