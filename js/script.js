@@ -30,5 +30,26 @@ $(document).on("submit","#addform",function(e){
         }
     });
 });
+// get users functions
+function getusers(){
+    var pageno = $("#currentpage").val();
+    $.ajax({
+        url:"./ajax.php",
+        type:"POST",
+        dataType: "json",
+        data: {page:pageno ,action:'getallusers'},
 
+        beforeSend:function(){
+            console.log("Wait... Data is Loading")
+        },
+        success: function(row) {
+         consol.log(row);
+        },
+        error: function(request, error) {
+            console.log(arguments);
+           console.log("Error"+error)
+}
+    });
+};
+    
 });
