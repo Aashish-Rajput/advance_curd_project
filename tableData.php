@@ -1,5 +1,5 @@
   <!-- TABLE -->
-  <table class="table">
+  <table class="table" id = "usertable">
   <thead class="table-dark">
     <tr>
       <th scope="col">Image</th>
@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <!-- <tr>
       <td scope="row">Picture1</td>
       <td>Aashu</td>
       <td>aashu@gmail.com</td>
@@ -21,6 +21,6 @@
        <a href="#" class="me-3  deleteuser" title="delete user"><i class="fas fa-trash-alt text-danger"></i></a>
        
       </td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>

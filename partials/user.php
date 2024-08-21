@@ -81,7 +81,7 @@ class user extends Database{
             $fileNameCmps = explode('.',$fileName);
             $fileExtension = strtolower(end($fileNameCmps));
             $newFileName = md5(time().$fileName).'.'.$fileExtension;
-            $allowedExtn = ["png","jpg","jpeg"];
+            $allowedExtn = ["png","jpg","jpeg","jfif"];
             if(in_array($fileExtension,$allowedExtn)){
                 $uploadFileDir = getcwd().'/uploads/';
                 $desFilePath =  $uploadFileDir.$newFileName;
