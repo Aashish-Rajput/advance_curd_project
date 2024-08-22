@@ -16,7 +16,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
          crossorigin="anonymous" referrerpolicy="no-referrer" />
-         <link rel="stylesheet" href="./style.css">
+         <link rel="stylesheet" href="./css/style.css">
  </head>
 
  <body>
@@ -39,7 +39,7 @@
              </div>
              <div class="col-2">
                  <button class="btn btn-dark py-2" type="button"
-                     data-bs-toggle="modal" data-bs-target="#usermodal">
+                     data-bs-toggle="modal" id="adduserbtn" data-bs-target="#usermodal">
                      Add New User
                  </button>
              </div>
@@ -49,13 +49,13 @@
 
          <!-- PAGINATION -->
          <nav aria-label="Page navigation example" id="pagination">
-             <ul class="pagination justify-content-center">
-                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+             <!-- <ul class="pagination justify-content-center">
+                 <li class="page-item disabled" id="prevpage"><a class="page-link" href="#">Previous</a></li>
                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
                  <li class="page-item"><a class="page-link" href="#">2</a></li>
                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
-             </ul>
+                 <li class="page-item" id="nextpage"><a class="page-link" href="#">Next</a></li>
+             </ul> -->
          </nav>
          <input type="hidden" value = "1" name="currentpage" id="currentpage">
 

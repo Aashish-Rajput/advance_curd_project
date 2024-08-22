@@ -95,21 +95,59 @@ class user extends Database{
         }
     }
 
-
-
-
-
     //function to update 
+    
+    public function  update($data ,$id){
+        if(!empty($data)){
+            $fields="";
+            $x = 1;
+            $fieldscount=count($data);
+            foreach($data as $field=>$value){
+                $fields.="{$field}=:{$field}"; 
+                if($x>$fieldscount){
+                    $fields.= ",";
+                }
+                $x++;
+
+            }
+        }
+        $sql = "UPDATE {$this->tableName} SET {$fields} where id =:id";
+        $stmt = $this->conn->prepare($sql);
+
+        try {
+            $this->conn->beginTransaction();
+            $data['id'] =$id;
+            $stmt->execute($data);
+            $this->conn->commit();
+      ; // Return the last inserted ID
+        } catch (PDOException $e) {
+            // Log the error instead of echoing it
+            error_log("Error: " . $e->getMessage());
+            $this->conn->rollBack();
+            return false; // Optionally return false on error
+        }
 
 
+    }
 
 
     //function to delete
+    public function deleteRow($id){
+        $sql = "DELETE FROM {$this->tableName} WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
 
+        try {
+            $stmt->execute([':id'=>$id]);
+            if($stmt->rowCount()>0){
+                return true;
+            }
+       
+        } catch (PDOException $e) {
+            error_log("Error: " . $e->getMessage());
+            return false; // Return false on error
+        }
 
-
-
-
+    }
     //function for search
 }
 

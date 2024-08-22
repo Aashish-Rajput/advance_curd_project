@@ -19,3 +19,17 @@
         </div>
     </div>
 </div>
+
+<!-- <div class="row">
+    <div class="col-sm-6 col-md-4">
+        <img src="./uploads/$user.photo{}]" alt="Image" class="rounded">
+    </div>
+    <div class="col-sm-6 col-md-8">
+       <h4 class="text-primary">${user.name}</h4>
+       <p>
+       <i class="fas fa-envelope-open text-light py-2"></i> $(user.email)
+       <br>
+       <i class="fas fa-phone text-light py-2"></i> $(user.mobile)
+       </p>
+    </div>
+</div> -->
